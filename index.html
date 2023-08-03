@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(90deg, rgb(179, 139, 139), rgb(225, 226, 230), rgb(202, 181, 181));
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #startBtn {
+            margin: 15px;
+            width: 120px;
+            height: 40px;
+            background-color: rgb(144, 184, 80);
+            color: white;
+            font-weight: bold;
+            font-size: 32px;
+            border-radius: 12px;
+            border: none;
+        }
+        #startBtn:hover{
+            background-color: rgb(182, 243, 83);
+            transition: .7s;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <h1 style="font-size: 48px; color: rgb(61, 61, 61);"><span style="color: rgb(94, 65, 255);">Guess</span> the Number Game 🎮</h1><br><br>
+    <button onclick="window.location.href='page2.html'" id="startBtn">Start</button>
+</section>
+</body>
+</html>

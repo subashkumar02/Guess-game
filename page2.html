@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(90deg, rgb(209, 192, 192), rgb(225, 226, 230), rgb(223, 190, 190));
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #valueOne{
+            width: 500px;
+            height: 6vh;
+            border-radius: 32px;
+            border: none;
+            padding-left: 15px;
+            font-size: 22px;
+        }
+        #Guess {
+            margin: 15px;
+            width: 120px;
+            height: 40px;
+            background-color: rgb(92, 134, 211);
+            color: white;
+            font-weight: bold;
+            font-size: 32px;
+            border-radius: 12px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 style="font-size: 32px; margin: 15px;">I have a number in my mind between 1 and 100. <span style="color: rgb(252, 102, 102);">Can you guess it ?🤔</span></h1>
+    <input type="number" id="valueOne" placeholder="Enter the number">
+    <button id="Guess" onclick="fun()">Guess</button>
+    <p id="demo" style="font-size: 24px; font-weight: 900;"></p>
+    <p id="lives" style="font-size: 18px; font-weight: 900; padding: 5px; background-color: red; color: white;"></p>
+</section>
+    <script>
+        value = Math.floor(Math.random()*100)
+        console.log(value)
+        i = 0
+        const fun = () => {
+        if(i == 9) window.location.href = 'page3.html'
+        if(value == document.getElementById("valueOne").value) window.location.href = 'correct.html'
+        else if(value > document.getElementById("valueOne").value) document.getElementById("demo").innerHTML = `You are close!!😶 The number is lesser than I guess, ${(10-i)} Lives remaining`
+        else if(value < document.getElementById("valueOne").value) document.getElementById("demo").innerHTML = `You guess it too high!!😑 The number is Greater than I guess ${(10-i)} Lives remaining`
+        document.getElementById("lives").innerHTML = "Lives " + (10 - i)
+        i++;
+    }
+    </script>
+</body>
+</html>
